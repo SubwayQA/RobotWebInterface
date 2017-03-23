@@ -34,15 +34,22 @@ if($isDisplay !== false)
 {
     if($_GET["additional"] === "QR")
     {
-	$show_command = "show_qr.sh";
-	$kill_command = "kill_qr.sh";
+		$show_command = "show_qr.sh";
+		$kill_command = "kill_qr.sh";
     }
 
     if($_GET["additional"] === "BAR")
     {
-	$show_command = "show_bar.sh";
-	$kill_command = "kill_qr.sh";
+		$show_command = "show_bar.sh";
+		$kill_command = "kill_qr.sh";
     }
+
+	if($_GET["additional"] === "BENDER")
+    {
+		$show_command = "show_bender.sh";
+		$kill_command = "kill_qr.sh";
+    }
+
     if($_GET["command"] !== "kill_code")
 	{ 
 	    exec ("/var/www/html/" . $show_command . " "  . $_GET["command"] . " 2>&1", $status);
