@@ -44,7 +44,7 @@ if($isDisplay !== false)
 		$kill_command = "kill_qr.sh";
     }
 
-	if($_GET["additional"] === "BENDER")
+    if($_GET["additional"] === "BENDER")
     {
 		$show_command = "show_bender.sh";
 		$kill_command = "kill_qr.sh";
