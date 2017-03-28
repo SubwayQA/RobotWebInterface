@@ -101,7 +101,7 @@
 
 	function upload()
         {
-	    var file = document.getElementById("hex_file").files[0];
+	    	var file = document.getElementById("hex_file").files[0];
     	    var form_data = new FormData();  
     	    form_data.append('hex_file', file, file.name);
 
@@ -117,6 +117,21 @@
                     $('#output').html(answer); 
                 }
     	     });	
+	}
+
+	function update()
+	{
+		var file = document.getElementById("hex_file").files[0];
+		$.ajax({
+			url     : '/upload_firmware.php',
+			type    : 'GET',
+			data    : {
+				'file'      : file
+			},
+			success: function(answer){
+				$('#output').html(answer);
+			}
+		});
 	}
 
 	function choose_file()
