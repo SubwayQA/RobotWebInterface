@@ -3,7 +3,7 @@
 $isSwipe   = strpos($_GET["robot"], 'Swipe');
 $isInsert  = strpos($_GET["robot"], 'Insert');
 $isTapster = strpos($_GET["robot"], 'Tapster');
-$isScanner = strpos($_GET["robot"], 'Display');
+$isDisplay = strpos($_GET["robot"], 'Display');
 if($isTapster !== false)
 {
 	$isTap = false;
