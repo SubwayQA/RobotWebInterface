@@ -41,8 +41,9 @@ if($knownRobot == 0)
     echo "Unknown robot type. Check name of your firmware file";
 }else
 {
-    foreach ($status as $value)
-	echo ($value."<br>");
+  exec("rm -f /home/pi/uploads/" . $_GET["file"], $res);
+  foreach ($status as $value)
+   	echo ($value."<br>");
 }
 
 ?>

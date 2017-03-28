@@ -72,7 +72,7 @@ if($isCombo !== false)
 foreach ($status as $value)
 {
     if(strpos($value,"scanned") !== false)
-	{continue;}
+		{continue;}
     echo ($value."<br>");
 	
     
