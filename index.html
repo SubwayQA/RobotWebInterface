@@ -122,16 +122,24 @@
 	function update()
 	{
 		var file = document.getElementById("hex_file").files[0];
-		$.ajax({
-			url     : '/upload_firmware.php',
-			type    : 'GET',
-			data    : {
-				'file'      : file
-			},
-			success: function(answer){
-				$('#output').html(answer);
+			if(file == null)
+			{
+				document.getElementById("output").innerHTML = "YOU MUST CHOOSE AND UPLOAD THE FILE BEFORE";
+				return false;
 			}
-		});
+
+			document.getElementById("output").innerHTML = "Waiting for robot's answer...";
+
+			$.ajax({
+				url     : '/upload_firmware.php',
+				type    : 'GET',
+				data    : {
+					'file'   : file.name
+				},
+				success: function(answer){
+					$('#output').html(answer);
+				}
+			});    	
 	}
 
 	function choose_file()
