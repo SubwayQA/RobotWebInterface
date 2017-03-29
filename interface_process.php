@@ -3,7 +3,8 @@
 $isSwipe   = strpos($_GET["robot"], 'Swipe');
 $isInsert  = strpos($_GET["robot"], 'Insert');
 $isTapster = strpos($_GET["robot"], 'Tapster');
-$isScan    = strpos($_GET["robot"]), 'Scan');
+$isScan    = strpos($_GET["robot"], 'Scan');
+
 if($isTapster !== false)
 {
 	$isTap = false;
@@ -45,16 +46,16 @@ if($isScan !== false)
 		$kill_command = "kill_qr.sh";
     }
 
-    if($_GET["additional"] === "BENDER")
+   if($_GET["additional"] === "BENDER")
     {
 		$show_command = "show_bender.sh";
 		$kill_command = "kill_qr.sh";
     }
 
-    exec ("/var/www/html/" . $show_command . " "  . $_GET["command"] . " 2>&1", $status);
-    exec ("python robot_interface.py Swipe " . $_GET["command"] . " 2>&1", $status);
+    exec ("/var/www/html/" . $show_command . " "  . $_GET["command"] . "> /dev/null 2>&1", $status);
+    exec ("python robot_interface.py Swipe 9 > /dev/null 2>&1", $status);
     sleep(2);
-    exec ("/var/www/html/" . $kill_command . " 2>&1", $status);
+    exec ("/var/www/html/" . $kill_command . "> /dev/null 2>&1", $status);
 
     $status = array("{\"response\" : \"DONE (Scanner robot)\"}");
 }

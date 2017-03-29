@@ -9,7 +9,7 @@
     <tbody>
 	<tr>
 	    <td><img src="bender_kill_all_humans3.jpg" alt="I'm Bender! Kiss my... well... you know" style="width:98px;height:88px;"></td>
-	    <td><h1>Subway SPM robot interface v.5</h1></td>
+	    <td><h1>Subway SPM robot interface v6</h1></td>
 	</tr>
     </tbody>
 </table>
@@ -27,8 +27,6 @@
 			<td style="width: 20%; background-color: rgb(255, 255, 255); border-color: rgb(204, 204, 204);"><input id="command" style="width:90%; font-size:56px;  font-weight: bold;" type="text" value="?" /></td>
 		</tr>
 		<tr>
-			<!--td onclick="askRobot('Display','','QR')" style="width: 20%; text-align: center; height: 150px; background-color: rgb(184, 138, 0);"><strong><span style="font-size:36px;">Display QR code</span></strong></td>-->
-			<!--td onclick="askRobot('Display','','BAR')" style="width: 20%; text-align: center; height: 150px; background-color: rgb(255, 175, 122);"><strong><span style="font-size:36px;">Display BAR code</span></strong></td-->
 			<td onclick="askRobot('Scan','','QR')" style="width: 20%; text-align: center; height: 150px; background-color: rgb(184, 138, 0);"><strong><span style="font-size:36px;">Scan QR code</span></strong></td>
 			<td onclick="askRobot('Scan','','BAR')" style="width: 20%; text-align: center; height: 150px; background-color: rgb(255, 175, 122);"><strong><span style="font-size:36px;">Scan BAR code</span></strong></td>
 		</tr>
@@ -84,6 +82,7 @@
 		{
 			robot_command = document.getElementById("command").value;
 		}
+
 		
 		document.getElementById("output").innerHTML = "Waiting for robot's answer...";
 
