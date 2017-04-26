@@ -52,7 +52,8 @@ if($isScan !== false)
 		$kill_command = "kill_qr.sh";
     }
 
-    exec ("/var/www/html/" . $show_command . " "  . $_GET["command"] . "> /dev/null 2>&1", $status);
+    $cmd = '"' . $_GET["command"] . '"';
+    exec ("/var/www/html/" . $show_command . " "  . $cmd . "> /dev/null 2>&1", $status);
     exec ("python robot_interface.py Swipe 9 > /dev/null 2>&1", $status);
     sleep(2);
     exec ("/var/www/html/" . $kill_command . "> /dev/null 2>&1", $status);
