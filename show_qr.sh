@@ -9,7 +9,7 @@ xset dpms force on
 
 rm -f $path/qr_code.png
 rm -f $path/qr_output
-qrencode -s 20 -l H -o $path/qr_code.png \'$1\'
+/usr/local/bin/qrencode -s 20 -l H -v 1 -o $path/qr_code.png $1
 echo "{\"response\":\"" > $path/qr_output
 zbarimg  $path/qr_code.png >> $path/qr_output
 echo "\"}" >> $path/qr_output
