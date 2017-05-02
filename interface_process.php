@@ -4,6 +4,12 @@ $isSwipe   = strpos($_GET["robot"], 'Swipe');
 $isInsert  = strpos($_GET["robot"], 'Insert');
 $isTapster = strpos($_GET["robot"], 'Tapster');
 $isScan    = strpos($_GET["robot"], 'Scan');
+$isVoice   = strpos($_GET["robot"], 'Voice');
+
+if($_GET["command"]==="")
+{
+  exit("Command is empty. Please specify the command.");
+}
 
 if($isTapster !== false)
 {
@@ -15,6 +21,13 @@ if($isTapster !== false)
 		}
 $isCombo   = strpos($_GET["robot"], 'Combo');
 
+
+if($isVoice !== false)
+{
+  $phrase = '"' . $_GET["command"] . '"';
+  exec ("/var/www/html/ "  . $cmd . "> /dev/null 2>&1", $status);
+
+}
 if($isSwipe !== false) 
 {
   exec ("python robot_interface.py Swipe " . $_GET["command"] . " 2>&1", $status);
