@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+
+# Copyright 2017 Google Inc. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Changed by Edinorozhka for Subway 2017
+
+"""Google Cloud Speech API sample application using the REST API for batch
+processing.
+
+Example usage:
+    python transcribe.py resources/audio.wav
+    
+"""
+
+# [START import_libraries]
+import argparse
+import io
+# [END import_libraries]
+
+
+def transcribe_file(speech_file):
+    """Transcribe the given audio file."""
+    from google.cloud import speech
+    speech_client = speech.Client()
+
+    with io.open(speech_file, 'rb') as audio_file:
+        content = audio_file.read()
+        audio_sample = speech_client.sample(
+            content=content,
+            source_uri=None,
+            encoding='LINEAR16',
+            sample_rate_hertz=16000)
+
+    alternatives = audio_sample.recognize('en-US')
+    print('{')
+    print('"response" : "DONE",')
+    for alternative in alternatives:
+        print('"transcript" : "{}",'.format(alternative.transcript))
+	print('"confidence" : "{}"'.format(alternative.confidence))	
+    print('}')
+    
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument(
+        'path', help='File to be recognized')
+    args = parser.parse_args()
+    transcribe_file(args.path)

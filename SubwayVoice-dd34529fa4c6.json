@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "subwayvoice-152316",
+  "private_key_id": "dd34529fa4c6fafb82384193eb603546e6c60772",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfddb9BmNz29iR\n2RsBdbQHZbkK5vsxHTiNrXG67QUf6ae2YFPAhutsojS0bCe/E7CE3UWlTziNN5B6\ns0f7Aw1/M3yPQ0xMCa+BmyWDMpnFKcuOqof33gPQSoSvHDoNiYkUtcPTG1fcWNrN\nzS14qi/C4kqQzHO4eOhu9TBn/BAaGPcSUaGSHkXyugyM+8eCyaf66Ym35B/55/LZ\neb9lv7rT+uy7cA0C+cOoMtkcN1KlI3do0f3PVsNKiuu3rLCxH81AbTV2CzaOsfgR\n/vk/vApodcfxVWRF6gWcFh/L7w08i1j9U0uGDyY87vzolX+loKttomlGMzjdDeFf\ndxdHroZTAgMBAAECggEAdI1PTLYEr0R7sW78vD5qDhYeAIgABlATbArgW/6uhjrk\nqPsTfF+haE/PMijzjEg594M8Sq3y6dU5N1YfQKtkjBr36kcIV3Ok4pih/JlZp7D6\n5hZjN5sBMpelD9ET5Z0nowmQTpdnytjvZQmZON879bgtRFUMKEPHsIJqlTa6FjgM\naksNN4CbBt/nVOKlyHon6+d049yY7xPiEFHThdYa3OuI5pzPmZTEFN8cI2swFgOx\n0NL7ISCnfmvEns9lIXB0Nv6eVK0/WLY5HxkJl78xC5n5eNqzV+5hDzYNmt7uipz+\nHFe53mILWc+ONDvGoA3jNM1XsOzZVJVL4+pgW3QzMQKBgQDex4mZiumiN2cAsByZ\n/Ok3/kEXmXP5jA6WqnEC2U8vv1/vYMDdltJkEue7UwTU2l4bPwLSucInRe46gOWr\nyYjdDeXwRs7ahVjp4WVHv6CmDoBEYMgHR0rmkqgZno7esNbDE8Y+cYI5kV8g9cqm\nGA5UPKNiouTHkP3ZNSHtt4OGTQKBgQC3PSKQw1WsxCtkFNN94jm/kreOGCUyu7iV\nRRXG/jh3vVIztxEEDqNkylg/QmtCtdrQDkr2bqYaahI3oRs+qSkNQGtCY005z+vB\nfi0zlfixY8l4u5gExLk3nKLqxxg9oS5bDeoB/CumZOU/2tbvFJ4ytTh2lnS6NNKP\nU1UQkE3PHwKBgQC9e74/iHWbcb/8R86r8v9yjqFSr0SDVmr6H1Ir+CVwGThB5Gtm\njee5EpNjMwOC/5DXX8rI7RKEUOiFfija6nmseyu+KJu8JXswwnNgiU7crqzOe/rm\npe7BGrA7yi7+ni6skd8mMWlwCYN+B1Er4H4fi8v0E1S/oUUoQBbxmAsYaQKBgHUa\naeuwGiHGYKCeOqb5m8RVpF74CVXJ6GXk98zrjPThFhacyRAZtsxkEE+lR90jUUqj\nx76D6j15Slko6bt66hRg9etAgQsQWO+YjpSoJH5hclFpOfbaLjBfNzLpuBEy3+gr\nFUDdgpvdYTEUz0WNnKh1bjdDYifaODKGpBdo0YErAoGBAL2kb4Hwu2c7lkNA6pKI\ncqhJcGJmDq1PfpLFY1rH/ATf6E7s0nAGcFEA1GFcChjNiN5aMKJX3sqFJIk/Z5V5\ncxJeCSlRbt2MteCvH2ljxhMsEKrjmMohaHDYjpzSyeRxUPL5D/1p3RWNNj0AG0Mu\nZZqHRhNLAIpR36HHQyBh53u/\n-----END PRIVATE KEY-----\n",
+  "client_email": "voice-recognition@subwayvoice-152316.iam.gserviceaccount.com",
+  "client_id": "111318758469086077117",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/voice-recognition%40subwayvoice-152316.iam.gserviceaccount.com"
+}
