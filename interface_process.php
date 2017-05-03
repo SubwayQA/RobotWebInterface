@@ -25,8 +25,9 @@ $isCombo   = strpos($_GET["robot"], 'Combo');
 if($isVoice !== false)
 {
   $phrase = '"' . $_GET["command"] . '"';
-  exec ("/var/www/html/ "  . $cmd . "> /dev/null 2>&1", $status);
-
+  exec ("/var/www/html/voice.sh "  . $phrase . "> /dev/null 2>&1", $status);
+  exit(file_get_contents("/home/pi/uploads//transcribe.out"));
+  
 }
 if($isSwipe !== false) 
 {

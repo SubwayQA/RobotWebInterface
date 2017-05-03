@@ -5,6 +5,6 @@ export HOME=/home/pi/
 
 xset dpms force on
 
-feh -F /home/pi/uploads/bender_kill_all_humans3.jpg > /dev/null 2>&1 &  
+feh -F /var/www/html/bender_kill_all_humans3.jpg > /dev/null 2>&1 &  
 echo "Oh, YES, baby!"
 
