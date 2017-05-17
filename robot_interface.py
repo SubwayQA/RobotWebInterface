@@ -46,11 +46,10 @@ while response == "":
 		
 curtime = 0
 response = ""
- 
+
+ser.flushInput() 
 ser.write(command)
 command_len = len(command)
-time.sleep(1)
-ser.flushInput() 
 
 for i in range(command_len):
 	cur_time = 1
@@ -60,7 +59,7 @@ for i in range(command_len):
 		response = ser.read(ser.inWaiting())
 		time.sleep(1)
 		if curtime > 70:
-			response = "Robot time out. Probably the wrong command was sent"
+			response = "Robot time out. Probably the wrong command was sent ( " + command + " )"
 			break
 
 
