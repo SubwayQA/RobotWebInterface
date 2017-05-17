@@ -89,7 +89,7 @@ foreach ($status as $value)
 {
     if(strpos($value,"scanned") !== false)
 		{continue;}
-    echo ($value."<br>");
+    echo ($value);
 	
     
 }
