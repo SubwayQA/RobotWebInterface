@@ -47,9 +47,10 @@ while response == "":
 curtime = 0
 response = ""
 
-ser.flushInput() 
 ser.write(command)
 command_len = len(command)
+ser.flushInput()
+ser.flushOutput()
 
 for i in range(command_len):
 	cur_time = 1
