@@ -49,6 +49,7 @@ response = ""
  
 ser.write(command)
 command_len = len(command)
+time.sleep(1)
 ser.flushInput() 
 
 for i in range(command_len):
