@@ -11,6 +11,9 @@ if($_GET["command"]==="")
   exit("Command is empty. Please specify the command.");
 }
 
+//$command=utf8_decode($_GET["command"]);
+$command=$_GET["command"];
+
 if($isTapster !== false)
 {
 	$isTap = false;
@@ -31,19 +34,19 @@ if($isVoice !== false)
 }
 if($isSwipe !== false) 
 {
-  exec ("python robot_interface.py Swipe " . $_GET["command"] . " 2>&1", $status);
+  exec ("python robot_interface.py Swipe " . $command . " 2>&1", $status);
 }
 if($isInsert !== false) 
 {
-  exec ("python robot_interface.py Insert " . $_GET["command"] . " 2>&1", $status);
+  exec ("python robot_interface.py Insert " . $command . " 2>&1", $status);
 }
 if($isTapster !== false) 
 {
-  exec ("python robot_interface.py Tapster " . $_GET["command"] . " 2>&1", $status);
+  exec ("python robot_interface.py Tapster " . $command . " 2>&1", $status);
 }
 if($isTap !== false) 
 {
-  exec ("python robot_interface.py Tap " . $_GET["command"] . " 2>&1", $status);
+  exec ("python robot_interface.py Tap " . $command . " 2>&1", $status);
 }
 
 if($isScan !== false) 
@@ -66,7 +69,11 @@ if($isScan !== false)
 		$kill_command = "kill_qr.sh";
     }
 
-    $cmd = '"' . $_GET["command"] . '"';
+    $cmd = '"' . $command . '"';
+    $cmd = str_replace("+", "Tartakovsky",$cmd);
+    $cmd = str_replace("#", "Bachchan",$cmd);
+    $cmd = str_replace("$", "Federer",$cmd);
+    $cmd = str_replace("&", "Sharapova",$cmd);    
     exec ("/var/www/html/" . $show_command . " "  . $cmd . "> /dev/null 2>&1", $status);
     exec ("python robot_interface.py Swipe 9 > /dev/null 2>&1", $status);
     sleep(2);
@@ -78,7 +85,7 @@ if($isScan !== false)
 
 if($isCombo !== false) 
 {
-	if(strpos($_GET["command"], 'handshake') !== false)
+	if(strpos($command, 'handshake') !== false)
 	{
 		exec ("python handshake.py 2>&1", $status);
 	}
@@ -88,9 +95,11 @@ if($isCombo !== false)
 foreach ($status as $value)
 {
     if(strpos($value,"scanned") !== false)
-		{continue;}
-    echo ($value);
-	
+	{continue;}
+    if($command==="?")
+        echo ($value . "<br/>");
+    else
+    	echo ($value);
     
 }
 
