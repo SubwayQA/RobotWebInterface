@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Unicorny, 2017 (v3)
+# Edinorozhka, 2017 (v4)
 import serial, time, sys
     
 # Get the arguments list 
@@ -21,7 +21,7 @@ ser.port = tty;
 ser.baudrate = 9600	 
 response = ""
 curtime = 0
-answer_time = 10
+answer_time = 15
 if robotName == "Insert":
 	ser.baudrate = 115200
 
